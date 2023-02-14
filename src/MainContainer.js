@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { UserCard } from "./UserCard";
 
 export class MainClassContainer extends Component {
     constructor() {
@@ -18,39 +19,40 @@ export class MainClassContainer extends Component {
 
     componentDidMount() {
         console.log('in componentDidMount');
-        setTimeout(() =>{
+        setInterval(() =>{
             this.setState({
-                counter: 5
+                counter: this.state.counter++
             })
-        }, 4000);
+        }, 6000);
     }
 
     clickMe = (name1) => {
         this.setState({ name: name1 });
     };
     shouldComponentUpdate(){
-        console.log('in shouldComponentUpdate',this.state.counter);
+      //  console.log('in shouldComponentUpdate',this.state.counter);
 
         return true;
         
     }
-    getSnapshotBeforeUpdate(props, state) {
-        console.log('getSnapshotBeforeUpdate', state);
-    }
-    componentDidUpdate(){
-        console.log(this.props,'componentDidUpdate', this.state);
+    // getSnapshotBeforeUpdate(props, state) {
+    //     console.log('getSnapshotBeforeUpdate', state);
+    // }
+    // componentDidUpdate(){
+    //     console.log(this.props,'componentDidUpdate', this.state);
 
-    }
+    // }
     render() {
-        console.log('in render',this.state);
+       // console.log('in render',this.state);
 
         return (
-            <> <button onClick={this.clickMe.bind(this, 'Shilpa')}>Click me</button>
+            <>                     <h2>{this.state.counter}</h2>
+            {this.state.counter<3 && <UserCard/>}
+            <button onClick={this.clickMe.bind(this, 'Shilpa')}>Click me</button>
 
                 <h1>My first React class Application</h1>
                 <h2>state --{this.state.name}</h2>
                 <div>{this.state.batch}</div>
-                <h2>{this.state.counter}</h2>
                 <div>prop -{this.props.parentName}</div>
             </>
 
