@@ -7,7 +7,7 @@ export class MainClassContainer extends Component {
         this.state = {
             name: 'CodeMind by self',
             batch: 'Second',
-            counter: '0'
+            counter: 0
         };
 
     }
@@ -17,14 +17,13 @@ export class MainClassContainer extends Component {
         return state;
     }
 
-    componentDidMount() {
-        console.log('in componentDidMount');
-        setInterval(() =>{
-            this.setState({
-                counter: this.state.counter++
-            })
-        }, 6000);
-    }
+//     componentDidMount() {
+//         console.log('in componentDidMount');
+//         setInterval(() =>{
+// let count = this.state.counter++;
+//             this.setState({counter:count})
+//         }, 6000);
+//     }
 
     clickMe = (name1) => {
         this.setState({ name: name1 });
