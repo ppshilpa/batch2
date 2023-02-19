@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
 import './App.css';
 import HeaderComponent from './Component/HeaderComponent';
-//import {MainClassContainer} from './MainClassContainer';
+import {MainClassContainer} from './MainClassContainer';
 import FooterComponent from './Component/FooterComponent'; 
-import {MainContainer } from './MainContainer'
+//import {MainContainer } from './MainContainer'
 class App extends Component {
   constructor(){
     super();
@@ -13,11 +13,15 @@ class App extends Component {
     }
   }
   render(){
+    const props = {
+      parentName:this.state.parentName,
+      counter:this.state.counter
+    }
   return (
     <div className="App">
       <HeaderComponent/>
-      <MainContainer/>
-      {/* <MainClassContainer parentName={this.state.parentName} counter={this.state.counter}/> */}
+      {/* <MainContainer/> */}
+       <MainClassContainer {...props}/> 
       <FooterComponent/>
     </div>
   );

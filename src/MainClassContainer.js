@@ -52,7 +52,7 @@ export class MainClassContainer extends Component {
                 <h1>My first React class Application</h1>
                 <h2>state --{this.state.name}</h2>
                 <div>{this.state.batch}</div>
-                <div>prop -{this.props.parentName}</div>
+                <h1>prop -{this.props.parentName}</h1>
             </>
 
         );
