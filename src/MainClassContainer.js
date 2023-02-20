@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { UserCard } from "./UserCard";
 
 export class MainClassContainer extends Component {
     constructor() {
@@ -46,7 +45,6 @@ export class MainClassContainer extends Component {
 
         return (
             <>                     <h2>{this.state.counter}</h2>
-            {this.state.counter<3 && <UserCard/>}
             <button onClick={this.clickMe.bind(this, 'Shilpa')}>Click me</button>
 
                 <h1>My first React class Application</h1>

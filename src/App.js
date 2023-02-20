@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './App.css';
 import HeaderComponent from './Component/HeaderComponent';
 import {MainClassContainer} from './MainClassContainer';
+import HOC,{CheckPureComponent}  from './Component/ComponentType'
 import FooterComponent from './Component/FooterComponent'; 
 //import {MainContainer } from './MainContainer'
 class App extends Component {
@@ -20,8 +21,10 @@ class App extends Component {
   return (
     <div className="App">
       <HeaderComponent/>
+      <CheckPureComponent />
+      <HOC {...props}/>
       {/* <MainContainer/> */}
-       <MainClassContainer {...props}/> 
+       {/* <MainClassContainer {...props}/>  */}
       <FooterComponent/>
     </div>
   );
